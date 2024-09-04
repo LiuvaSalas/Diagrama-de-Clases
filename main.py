@@ -5,13 +5,13 @@ from preguntas import Preguntas
 from encuesta import (Encuesta, EncuestaLimitadaEdad, EncuestaLimitadaRegion)
 
 def main():
-    usuario = input("Indica tu nombre:\n> ")
+    correo = input("Indica tu correo:\n> ")
     numero = 0
     edad = int(input("Indica tu edad:\n> "))
     print("Region:\n1. Tarapaca\n2. Antofagasta\n3. Atacama\n4.Coquimbo\n5.Valparaiso")
     region = int(input("Indica tu region, por favor:\n> "))
 
-    usuario = Usuario(usuario, edad, region)
+    correo = Usuario(correo, edad, region)
 
     #creamos alternativas para probar
     alternativa1 = Alternativa("1. Si")
