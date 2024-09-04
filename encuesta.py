@@ -28,6 +28,9 @@ class Encuesta:
         return f"Encuesta: {self.nombre}\nPregunta:\n{preguntas_mostradas}\n"
 
 class EncuestaLimitadaEdad(Encuesta):
+    """
+    Encuesta limitada por edad, valida que el usuario este dentro de un rango permitido para la encuesta.
+    """    
     def __init__(self, nombre: str, edad_min: int, edad_max: int):
         super().__init__(nombre)
         self.edad_min = edad_min
@@ -40,6 +43,9 @@ class EncuestaLimitadaEdad(Encuesta):
             print("Su edad no esta dentro del rango etario permitido para contestar esta encuesta.\nMuchas gracias!")
 
 class EncuestaLimitadaRegion(Encuesta):
+    """
+    Encuesta limitada por region, valida que el usuario este dentro las regiones consideradas para la encuesta.
+    """    
     def __init__(self, nombre, regiones = [1, 2, 3, 4, 5]):
         super().__init__(nombre)
         self.regiones = regiones
