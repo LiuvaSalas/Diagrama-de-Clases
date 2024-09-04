@@ -23,7 +23,7 @@ class Encuesta:
 
     def mostrar(self):
         preguntas_mostradas = "\n".join([preg.mostrar() for preg in self.preguntas])
-        return f"Encuesta: {self.nombre}\nPregunta:\n{preguntas_mostradas}"
+        return f"Encuesta: {self.nombre}\nPregunta:\n{preguntas_mostradas}\n"
 
 class EncuestaLimitadaEdad(Encuesta):
     def __init__(self, nombre: str, edad_min: int, edad_max: int):

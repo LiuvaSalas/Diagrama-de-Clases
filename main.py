@@ -21,17 +21,25 @@ def main():
     pregunta1.agregar_alternativas(alternativa1)
     pregunta1.agregar_alternativas(alternativa2)
 
+    edad_minima = 18
+    edad_maxima = 30
+
     #creamos una encuesta
-    encuesta = EncuestaLimitadaEdad("Catacion de Tortas", 18, 30)
+    encuesta = EncuestaLimitadaEdad("Catacion de Tortas", edad_minima, edad_maxima)
     encuesta.agregar_pregunta(pregunta1)
 
-    #mostramos la encuesta
-    print(encuesta.mostrar())
+    respuesta_usuario = 0
+    if edad < edad_minima or edad > edad_maxima:
+        usuario.contestar_encuesta(encuesta, respuesta_usuario)
+    else:
+        #mostramos la encuesta
+        print(encuesta.mostrar())
+        respuesta_usuario = int(input("Responde indicando el numero de la respuesta:\n> "))
+        while respuesta_usuario < len(pregunta1.alternativas) or respuesta_usuario > len(pregunta1.alternativas):
+            respuesta_usuario = int(input(f"Responde indicando una respuesta valida.\n{encuesta.mostrar()}\nIndica una respuesta:\n> "))
+        usuario.contestar_encuesta(encuesta, respuesta_usuario)
 
-    respuesta_usuario = int(input("Responde indicando el numero de la respuesta:\n> "))
-    usuario.contestar_encuesta(encuesta, respuesta_usuario)
-
-    print("Muchas gracias por participar\nHasta la proxima!")
+        print("\nMuchas gracias por participar\nHasta la proxima!")
 
 
 main()
