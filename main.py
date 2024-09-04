@@ -11,7 +11,7 @@ def main():
     print("Region:\n1. Tarapaca\n2. Antofagasta\n3. Atacama\n4.Coquimbo\n5.Valparaiso")
     region = int(input("Indica tu region, por favor:\n> "))
 
-    correo = Usuario(correo, edad, region)
+    usuario = Usuario(correo, edad, region)
 
     #creamos alternativas para probar
     alternativa1 = Alternativa("1. Si")
@@ -44,7 +44,7 @@ def main():
             respuesta_usuario = int(input("Responde indicando el numero de la respuesta:\n> "))
             while respuesta_usuario < len(pregunta1.alternativas) or respuesta_usuario > len(pregunta1.alternativas):
                 respuesta_usuario = int(input(f"Responde indicando una respuesta valida.\n{encuesta.mostrar()}\nIndica una respuesta:\n> "))
-            correo.contestar_encuesta(encuesta, respuesta_usuario)
+            usuario.contestar_encuesta(encuesta, respuesta_usuario)
 
             print("\nMuchas gracias por participar\nHasta la proxima!")
     elif tipo_encuesta == 2:
