@@ -44,7 +44,7 @@ def main():
             respuesta_usuario = int(input("Responde indicando el numero de la respuesta:\n> "))
             while respuesta_usuario < len(pregunta1.alternativas) or respuesta_usuario > len(pregunta1.alternativas):
                 respuesta_usuario = int(input(f"Responde indicando una respuesta valida.\n{encuesta.mostrar()}\nIndica una respuesta:\n> "))
-            usuario.contestar_encuesta(encuesta, respuesta_usuario)
+            correo.contestar_encuesta(encuesta, respuesta_usuario)
 
             print("\nMuchas gracias por participar\nHasta la proxima!")
     elif tipo_encuesta == 2:
