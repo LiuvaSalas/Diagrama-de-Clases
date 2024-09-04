@@ -1,4 +1,8 @@
 class Alternativa:
+    """
+    Muestra las alternativas y la ayuda para entender el contenido de la alternativa si se le agrega
+    """
+
     def __init__(self, contenido: str, ayuda = None):
 
         self.contenido = contenido

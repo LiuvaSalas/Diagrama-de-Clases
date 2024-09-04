@@ -1,7 +1,9 @@
 from preguntas import Preguntas
 
 class Encuesta:
-    
+    """
+    Genera la encuesta con un nombre, y agrega las preguntas a la encuesta, ademas del listado de respuestas del usuario.
+    """
     def __init__(self, nombre: str):
         self.nombre = nombre
         self.preguntas = []
